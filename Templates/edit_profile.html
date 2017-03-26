@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+ 	<head>
+        <meta charset="UTF-8"> 
+        {% load static %}
+       	<link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
+       	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="{% static 'register.js' %}"></script>
+       	
+    </head>
+    	<body>
+    		<div id="wrapper">
+    	<div class='loadDiv'>
+    			<img id="mike" src='{{MEDIA_URL}}img/minions.gif'/>
+    				<div class="x">
+					{% for user_objs in user_obj %}	
+    		<form class="main-form first" method="post" action="/update_profile/" enctype="multipart/form-data">{% csrf_token %} 
+			  <div class="main-form__title">
+			    <h1>Edit
+          <a href="/profile/"><div style="float:right;width:1.5px;height:1.5px;cursor: pointer;margin:0px 14px auto;color:grey;z-index=-100;">X</div></a></h1>
+        </div>
+			
+			  <div class="main-form__body">
+			    <input class="main-form__body--input" type="text" placeholder="Firstname" name="firstname" value="{{user_objs.firstname}}" required /><label style="color:red;margin-left:20%">{{ form.firstname.errors }}</label><br><hr><br>
+			    
+			    <input class="main-form__body--input" type="email" placeholder="Email Address" name="email" value="{{user_objs.email}}" required/><label style="color:red">{{ form.email.errors }}</label><br><hr><br>
+			    <input class="main-form__body--input" type="password" placeholder="Password" name="password1"  value="{{user_objs.password}}"required/><label style="color:red">{{ form.non_field_errors }}</label><br><hr><br>
+			    <input class="main-form__body--input" type="password" placeholder=" Confirm Password" name="password2" value="{{user_objs.password}}" required/><br><hr><br>
+			    <textarea class="main-form__body--input" name="description" placeholder="Describe yourself">{{user_objs.description}}</textarea><br><hr><br>
+			    <textarea class="main-form__body--input" name="location" placeholder="Location">{{user_objs.location}}</textarea><br><hr><br>
+			    <input class="main-form__body--input" type="file" name="profilepic" accept="image/*" required>
+			    <button class="btn">Clear</button>
+			    <button class="btn">Save Changes</button>
+			    
+
+				
+			  </div>
+			</form>
+			{% endfor %}
+			</div>
+  			</div>
+  		
+			</div><!-- 
+    <div id="openModal" class="modalDialog">
+				    <div>	
+				    	
+				    	<img src="{{MEDIA_URL}}img/welcomewalk.gif">
+				    	<a href="/saveval/" title="Continue" class="continue">Continue</a>
+				    </div>
+				</div> -->
+    	
+   	</body>
+</html>

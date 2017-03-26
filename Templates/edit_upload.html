@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<title>EDIT</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'uploadform.css' %}">
+	<head>
+	<body>
+		<div id="wrapper">
+    	
+    				<div class="x">
+    		
+			    
+
+				<!-- <div id="openModalEdit" class="modalDialog"> -->
+				    <div>
+				    {% for obj in object %}	
+				    	<form class="main-form first" action="/update_file/{{obj.imglink}}/" method="post" enctype="multipart/form-data">{% csrf_token %} 
+			  <div class="main-form__title">
+			    <h1>EDIT<a href="/profile/"><div style="float:right;width:1.5px;height:1.5px;cursor: pointer;margin:0px 14px auto;color:grey;z-index=-100;">X</div></a></h1>
+			  </div>
+			  <div class="main-form__body">
+			    
+			    <input class="main-form__body--input" type="text" name="description" placeholder="Description" value="{{obj.description}}"/>
+			    <!--h1>{{obj.category}}</h1-->
+			    <select class="main-form__body--input" type="text" placeholder="Category" name="category" required="true">
+				  <option class="main-form__body--input" type="text" selected="true" style="display:none;" value="Other">Other</option>
+				  <option class="main-form__body--input" type="text" value="Arts">Arts</option>
+				  <option class="main-form__body--input" type="text" value="Food">Food</option>
+				  <option class="main-form__body--input" type="text" value="Other">Other</option> 
+				</select>
+			    
+			    <input type="file" name="docfile" accept="image/*" required><br><br>
+			    <input class="main-form__body--input" type="url" placeholder="Url" name="link" value="{{obj.link}}"/>
+				 <button class="continue">SAVE CHANGES</button>	
+			    </form>
+				   {% endfor %}
+				    	
+				    </div>
+				    
+				</div>
+			  </div>
+			
+			
+  			<!--</div>-->
+	</body>
+</html>

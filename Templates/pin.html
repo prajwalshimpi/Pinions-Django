@@ -1,0 +1,208 @@
+<!DOCTYPE>
+<html>
+	<head>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'pinstyle.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'navwhenloggedinprofile.css' %}">
+		<!--link rel="stylesheet" type="text/css" href="{% static 'uploadform.css' %}"-->
+		<link href='http://fonts.googleapis.com/css?family=Slabo+27px' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Slab" />
+		 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		 <link href='http://fonts.googleapis.com/css?family=Kaushan+Script:400,700|Merriweather' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Salsa:400,700|Merriweather' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Special+Elite:400,700|Merriweather' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Calligraffitti:400,700|Merriweather' rel='stylesheet' type='text/css'>
+		<!--link rel="stylesheet" type="text/css" href="{% static 'materialize.css' %}"-->
+		
+		</head>
+	<body>
+		<div id="navbar"><br><br><br><h1 id="logo">Pinions:Profile</h1></div>
+		{% if check > 0 %}
+		<div class="navbutton"></div>
+		<div id="flash"><!--img src="{{MEDIA_URL}}img/profile.jpg" / --></div>
+		<!--div id="flashpic"><img src="{{MEDIA_URL}}img/pinned.gif" / ></div-->
+		<nav>
+
+		<ul class="clearfix">
+
+			<li class="togglebtn"><a id="circle" href="#"><span class="fontawesome-user"></span></a>
+
+				<ul class="login">
+        <dl>  
+
+    
+	<a href="/pinions/"><li id="home_nav">
+      <!-- <div class="home-icon">
+        <div class="roof">
+          <div class="roof-edge"></div>
+        </div>
+        <div class="front"></div>
+      </div-->
+      <img id="home" src="{{MEDIA_URL}}img/home.gif">
+    </li></a>
+<a href="/help_pin/" ><li id="aboutus_nav">
+      <!-- <div class="about-icon">
+        <div class="head">
+          <div class="eyes"></div>
+          <div class="beard"></div>
+        </div>
+      </div> -->
+      <img id="aboutus" src="{{MEDIA_URL}}img/aboutus.gif">
+    </li></a>
+	<a href="/display_cat/"><li id="cat_nav">
+      <!-- <div class="work-icon">
+        <div class="paper"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+      </div> -->
+         <img id="pin" src="{{MEDIA_URL}}img/pin.gif">
+    </li></a>
+   
+   
+  </dl>
+          
+				</ul>
+
+			</li>
+
+		</ul>
+
+	</nav>
+	
+		
+{% else %}
+	<nav>
+
+		<ul class="clearfix">
+
+			<li class="togglebtn"><a id="circle" href="#"><span class="fontawesome-user"></span></a>
+
+				<ul class="login">
+        <dl>  
+
+   <a href="/pinions/"><li id="home_nav">
+      <!-- <div class="home-icon">
+        <div class="roof">
+          <div class="roof-edge"></div>
+        </div>
+        <div class="front"></div>
+      </div> -->
+      <img id="home" src="{{MEDIA_URL}}img/home.gif">
+    </li></a>
+<a href="/help_pin/" ><li id="aboutus_nav">
+      <!-- <div class="about-icon">
+        <div class="head">
+          <div class="eyes"></div>
+          <div class="beard"></div>
+        </div>
+      </div> -->
+      <img id="aboutus" src="{{MEDIA_URL}}img/aboutus.gif">
+    </li></a>
+	 <a href="display_cat"> <li id="cat_nav">
+      <!-- <div class="work-icon">
+        <div class="paper"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+      </div> -->
+        <img id="pin" src="{{MEDIA_URL}}img/pin.gif">
+    </li></a>
+   
+    <li>
+      <!-- <div class="mail-icon">
+        <div class="mail-base">
+          <div class="mail-top"></div>
+        </div>
+      </div> -->
+        <img id="support" src="{{MEDIA_URL}}img/support.gif">
+    </li>
+	 <a href="/login/"> <li id="login_nav">
+      <!-- <div class="mail-icon">
+        <div class="mail-base">
+          <div class="mail-top"></div>
+        </div>
+      </div> -->
+      <img id="login" src="{{MEDIA_URL}}img/signin.gif">
+    </li></a>
+      <a href="/saveval/"> <li id="register_nav">
+      <!-- <div class="mail-icon">
+        <div class="mail-base">
+          <div class="mail-top"></div>
+        </div>
+      </div> -->
+       <img id="register" src="{{MEDIA_URL}}img/register.gif">
+    </li></a>
+  </dl>
+          
+				</ul>
+
+			</li>
+
+		</ul>
+
+	</nav>
+{% endif %}
+
+		<div id="wrapper" style="margin-top: -50px">
+		{% for user_objs in user_obj %}
+			<div id = "navitems">
+				<img src="{{MEDIA_URL}}{{user_objs.profilepic}}" class="profile-img"/>
+				 
+				<a href="/profile/"><p id="name">{{user_objs.username}}</p></a>
+				 <hr id="profilehr">
+				<div id="desc">{{user_objs.description}}</div>
+				<hr id="profilehr">
+				<div id="edit"><a href="/edit_profile/">Edit Profile</a></div>
+				<div id="logout"><a href="/logout/">Log Out</a></div>
+			</div>
+		
+			<div id="pin_bar"> 
+				<div id="pin_picture">
+					<img src="{{MEDIA_URL}}{{user_objs.profilepic}}" ><h1><br>{{full_name}}
+					<br><br><br><br><i class="material-icons">location_on</i>{{user_objs.location}}</h1></img>
+					      
+					
+				</div>
+					<!--div id="upload"><a class="waves-effect waves-light btn" href="/upload_file/">Stuff</a></div-->
+				<!--textarea name="description" id="description"></textarea>
+				<button id="save" onClick="save()">SAVE CHANGES</button>
+				<button id="submit" onClick="showDiv()">SUBMIT</button-->
+				{% endfor %}
+			</div>
+			<div class="buttonHolder">
+			<a href="/upload/" class="button tick"></a>
+			</div>
+			<br><br><br><br>
+			
+			<div id="columns">
+			
+				<div id="canvas">
+					{% for object in objects %}
+						<div class="grid" id="{{object.imglink}}">
+							<a href="/delete/{{object.imglink}}"><div id="close">X</div></a>
+							<a href="/edit/{{object.imglink}}" id="edit_pins"><img src="{{MEDIA_URL}}img/edit.png" id="edit_pin"/></a>
+								<img src="{{MEDIA_URL}}{{object.docfile}}"/>
+
+								<p>{{object.description}}</p><br>
+								<div class="chip">
+								{{full_name}}
+									</div>
+							
+
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		
+		</div>
+	
+
+		{% load static %}
+		<script src="{% static 'jquery-1.11.3.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'test.js' %}"></script>
+		<script type="text/javascript" src="{% static 'materialize.js' %}"></script>
+		<script src="{% static 'navi.js' %}"></script>
+	
+	</body>
+</html>

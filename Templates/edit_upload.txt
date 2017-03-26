@@ -1,0 +1,122 @@
+prajwal
+
+
+Search Drive
+
+Drive
+.
+Folder Path
+pin
+Templates
+NEW 
+Folders and views
+My Drive
+Shared with me
+Google Photos
+Recent
+Starred
+Trash
+.
+
+HTML
+art.html
+
+HTML
+cat.html
+
+HTML
+edit_upload.html
+
+HTML
+food.html
+
+HTML
+form.html
+
+HTML
+index.html
+
+HTML
+index5.html
+
+HTML
+invalid_login.html
+
+HTML
+loggedin.html
+
+HTML
+login.html
+
+HTML
+logout.html
+
+HTML
+pin.html
+
+HTML
+Register.html
+
+HTML
+Signin.html
+
+HTML
+upload.html
+
+HTML
+uploadform.html
+Get Drive for PC
+505 MB of 15 GB used
+Upgrade storage
+All selections cleared 
+Uploads completed
+HTMLindex.html6.75 KBUploadedShare
+Style Sheetcomponent.css5.33 KBUploadedShare
+Style Sheetdefault.css27.6 KBUploadedShare
+Style Sheetindex.css6.89 KBUploadedShare
+Style Sheetdefault.css10.4 KBUploadedShare
+<html>
+	<head>
+		<title>EDIT</title>
+		{% load static %}
+		<link rel="stylesheet" type="text/css" href="{% static 'uploadform.css' %}">
+	<head>
+	<body>
+		<div id="wrapper">
+    	
+    				<div class="x">
+    		
+			    
+
+				<!-- <div id="openModalEdit" class="modalDialog"> -->
+				    <div>
+				    {% for obj in object %}	
+				    	<form class="main-form first" action="/update_file/{{obj.usernames}}/{{obj.imglink}}" method="post" enctype="multipart/form-data">{% csrf_token %} 
+			  <div class="main-form__title">
+			    <h1>EDIT</h1>
+			  </div>
+			  <div class="main-form__body">
+			    
+			    <input class="main-form__body--input" type="text" name="description" placeholder="Description" value="{{obj.description}}"/>
+			    <h1>{{obj.category}}</h1>
+			    <select class="main-form__body--input" type="text" placeholder="Category" name="category">
+				  <option class="main-form__body--input" type="text" placeholder="Category" selected="true" style="display:none">{{obj.category}}</option>
+				  <option class="main-form__body--input" type="text">Arts</option>
+				  <option>Food</option>
+				  <option>Other</option>
+				</select>
+			    <input type="file" name="docfile" accept="image/*"><br><br>
+			    <input class="main-form__body--input" type="url" placeholder="Url" name="link" value="{{obj.link}}"/>
+				 <button class="continue">SAVE CHANGES</button>	
+			    </form>
+				   {% endfor %}
+				    	
+				    </div>
+				    
+				</div>
+			  </div>
+			
+			
+  			<!--</div>-->
+	</body>
+</html>

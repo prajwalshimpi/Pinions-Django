@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+	<head>
+		<title>UPLOAD</title>
+		
+		{% load static %}
+        <meta charset="UTF-8"> 
+		
+       	<link rel="stylesheet" type="text/css" href="{% static 'uploadform.css' %}">
+       	
+	<head>
+	<body>
+		
+		 <form class="main-form first" action="/upload_file/" method="post" enctype="multipart/form-data">{% csrf_token %} 
+			  <div class="main-form__title">
+			    <h1>UPLOAD <a href="/profile/"
+				<a href="/profile/"><div style="float:right;width:1.5px;height:1.5px;cursor: pointer;margin:0px 14px auto;color:grey;z-index=-100;">X</div></a>
+				</h1>
+			  </div>
+			 
+			  <div class="main-form__body">
+			   <!--input class="main-form__body--input" type="text" placeholder="Username" name="usernames"/-->
+			    <input class="main-form__body--input" type="text" placeholder="Description" name="description" required/>
+			    <select class="main-form__body--input" type="text" placeholder="Category" name="category" required="true">
+				  <option class="main-form__body--input" type="text" selected="true" style="display:none;" value="Other">Other</option>
+				  <option class="main-form__body--input" type="text" value="Arts">Arts</option>
+				  <option class="main-form__body--input" type="text" value="Food">Food</option>
+				  <option class="main-form__body--input" type="text" value="Other">Other</option> 
+				 
+				</select>
+			    <input type="file" accept="image/*" name="docfile" required><br><br>
+			    <input class="main-form__body--input" type="url" placeholder="Url" name="link" required/>
+				<button class="continue">UPLOAD</button>
+			    </form>
+	</body>
+</html>

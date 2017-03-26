@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SIGN UP</title>
+		<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css"> -->
+		<link rel="stylesheet" type="text/css" href="form.css">
+	</head>
+	<body background="canvas.jpg">
+
+		<div id="signup">
+			<div id="formheader">REGISTER</div>
+			 	{% if form.error %}
+	        		<p class="error"> Sorry Wrong details</p>
+   				{% endif %} 
+			<div id="formcontent">
+				<form action="/auth/" method="post">{% csrf_token %} 
+					<!-- <br><input type="text" id='firstname' placeholder="FIRST NAME" onkeyup="validateFirst()" required><label id="firstnameprompt" value="{{firstnameerror}}"></label><br><hr><br>
+ 					<input type="text" id="lastname" placeholder="LAST NAME" onkeyup="validateLast()"><label id="lastnameprompt" 	value="{{lastnameerror}}"></label><br><hr><br> 
+					<input type="email" name="email" id="email" placeholder="EMAIL ID" required><br><hr><br> -->
+					<input type="text" name="username" placeholder="USER NAME" onkeyup="validateUsername()" required><label id="username" value=""></label><br><hr><br>
+					<input type="password" name="password" placeholder="PASSWORD" onkeyup="validatePassword()" required><label id="password" value=""></label><br><hr><br>
+					<!-- <input type="radio" name="sex" value="male" checked><label id="malelabel">MALE</label>
+					<input type="radio" name="sex" value="female"><label id="femalelabel">FEMALE</label><br><hr><br>
+					<label for="dob" id="datelabel">DATE OF BIRTH:</label><br> -->
+					 <!-- <input id="dob" name="dob" min="1990-01-01" max="2015-10-01" type="date" required><br><br> -->
+					
+					<button id="submit" onclick="welcome()">LOG IN</button>
+				</form>
+			</div>
+		</div>
+		<script src="form.js"></script>
+	</body>
+</html> 

@@ -1,0 +1,161 @@
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+body, html { font-size: 100%; padding: 0; margin: 0;}
+
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+#navbar {
+position: fixed;
+width: 100%;
+background-color: rgba(0,0,0,0.9);
+height: 60px;
+z-index: 10;
+margin:-10px 0px 0px 0px ;
+box-shadow: 0 5px 8px rgba(34,25,25,0.4);
+
+}
+
+.navbutton {
+position: fixed;
+float: left;
+width: 40px;
+left: 2%;
+height: 50px;
+background-color: rgba(0,0,0,0);
+z-index: 15;
+cursor: pointer;
+}
+/* Creates the 3 line menu icon */
+.navbutton:before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  width: 40px;
+  height: 5px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 
+    0 12px 0 0 #ffffff,
+    0 24px 0 0 #ffffff;
+	z-index: -2;
+}
+
+
+#navitems
+{
+  position: fixed;
+  top: 0px;
+  left:2;
+  z-index:5;
+  display : none;/* Stops it displaying normally */
+  width: 100%;
+  height: 100%;
+  background-color: rgba(42,78,110,0.8);
+  padding-top: 60px;
+  text-align: center;
+  box-shadow:0 0 20px 0;
+
+  /*opacity:0.45;*/
+  
+}
+
+
+
+  
+  /* individual list items */
+
+
+#desc1{
+
+ color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-family: Comic Sans MS;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    padding: 20px;
+    margin: 0 auto;
+    width: 89%;
+	padding-top:15px;
+	height:30px;
+}
+
+#desc{
+	color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    font-family: Comic Sans MS;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display:inline-block;
+    padding: 20px;
+    margin: 0 auto;
+    width: 35%;
+	padding-top:15px;
+	height:auto;
+	word-wrap: break-word;
+}
+
+/*#profileline{
+    height: 12px;
+    border: 0;
+    width: 35%;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}*/
+.profile-img {
+ display: block;
+ height: 7em;
+ margin-right: auto;
+ margin-left: auto;
+ border: .5em solid #f2f2f2;
+ border-radius: 100%;
+ box-shadow:  0 1px 0 0 rgba(0,0,0,.1);
+}
+
+#food{
+background-color: #F5F5F5;
+}
+#art{
+	background-color: whitesmoke;
+}
+.chip {
+  display: inline-block;
+  height: 32px;
+  width: 100%;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.6);
+  line-height: 32px;
+  padding: 0 12px;
+  border-radius: 16px;
+  background-color: #E4E4E4; }
+  .chip img {
+  float: left;
+  margin: 0 8px 0 -12px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%; }
+  .chip i.material-icons {
+  cursor: pointer;
+  float: right;
+  font-size: 16px;
+  line-height: 32px;
+  padding-left: 8px; }
+  
+ #logo {
+  width: 100% !important;
+  height: 100%!important;
+  font-family:'Special Elite'!important;
+  left: 50%!important;
+  z-index: 11!important;
+  text-transform: uppercase!important;
+  padding-top: 8px!important;
+  color: red!important;
+  text-align: center!important;
+}
+
+

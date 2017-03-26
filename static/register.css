@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Futura;
+  outline: none;
+}
+
+body {
+  font-family: Futura;
+  background: #CDE8D5;
+}
+/* modal */
+a { color: inherit;
+text-decoration: none; } 
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+}
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+.continue {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: 5px;
+    text-align: center;
+    top: 100px;
+    width: 70px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.continue:hover {
+    background: #00d9ff;
+}
+/* end modal */
+#mike{
+float: right;
+
+}
+.x{
+display: none; 
+position:absolute;
+float: left;
+padding-left: 17%;
+-webkit-animation: cssAnimation 1s 1 ease;
+-moz-animation: cssAnimation 1s 1 ease;
+-o-animation: cssAnimation 1s 1 ease;
+}
+@-webkit-keyframes cssAnimation {
+to { -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px); }
+from { -webkit-transform: rotate(360deg) scale(2) skew(0deg) translate(0px); }
+}
+@-moz-keyframes cssAnimation {
+to { -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px); }
+from { -webkit-transform: rotate(360deg) scale(2) skew(0deg) translate(0px); }
+}
+@-o-keyframes cssAnimation {
+to { -webkit-transform: rotate(0deg) scale(1) skew(0deg) translate(0px); }
+from { -webkit-transform: rotate(360deg) scale(2) skew(0deg) translate(0px); }
+}
+.main-form:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.main-form {
+  width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.main-form__title {
+  padding: 20px 0;
+  text-align: center;
+}
+.main-form__title h1 {
+  position: relative;
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 25px;
+}
+.main-form__title h1:after {
+  position: absolute;
+  bottom: -13px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 40px;
+  height: 4px;
+  background: #f2f2f2;
+  content: "";
+}
+.main-form__body--input {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: #fcfcfc;
+  border-radius: 6px;
+ /* padding: 15px;*/
+  margin-bottom: 10px;
+  outline: 0;
+  font-size: .9rem;
+  color: #666666;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.main-form__body--input:focus {
+  background: #f7f7f7;
+}
+.main-form__body .btn {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+ /* float: left;*/
+  background: #e6e6e6;
+  padding: 15px;
+  border: 0;
+  font-size: .9rem;
+  color: #999999;
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+.main-form__body .btn:last-of-type {
+ /* float: right;*/
+  background: #FCA44B;
+  color: #fff;
+}
+.main-form__body .btn:last-of-type:hover {
+  background: #fb8b19;
+}
+
+::-webkit-input-placeholder {
+  color: #000000;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+:-moz-placeholder {
+  color: #000000;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+::-moz-placeholder {
+  color: #000000;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+:-ms-input-placeholder {
+  color: #000000;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}

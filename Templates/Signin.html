@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+ <html>
+ 	<head>
+	{% load static %}
+         <meta charset="UTF-8"> 
+       <link rel="stylesheet" type="text/css" href="{% static 'signin.css' %}">
+		<link href='http://fonts.googleapis.com/css?family=Special+Elite:400,700|Merriweather' rel='stylesheet' type='text/css'>
+
+    </head>
+    <body>
+
+	
+<div id="loginWrapper" class="loginWrapper">
+<a href="/pinions/"><h1 id= "heading">PINIONS!</h1></a>
+  <ul class="rainbowBar">
+    <li></li><li></li>
+  </ul>
+  <div class="loginBox">
+	<form action="/auth/"  method="post">{% csrf_token %} 
+    <div class="inputWrapper iconUser">
+      <input type="text" id="username" name= "username" class="input" placeholder="Username" required/>
+    </div>
+    <div class="inputWrapper iconPw">
+      <input type="password" id="password" name="password" class="input inputPw" placeholder="Password" required/>
+ 
+    </div>
+	 <button id="signInButton" class="button"></button>
+	</form>
+  </div>
+  <h2>SIGN IN</h2>
+  <a class="forgot" href="/forgot_pass/">Forgot password?</a>
+</div>
+
+
+   	</body>
+</html>

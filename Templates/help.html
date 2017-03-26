@@ -1,0 +1,228 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>HELP CENTER</title>
+		{% load static %}
+		 <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+       <link rel="stylesheet" type="text/css" href="{% static 'default.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'component.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'help.css' %}" />
+		
+        <!--link rel="stylesheet" type="text/css" href="{% static 'cat.css' %}"-->
+		<link href='http://fonts.googleapis.com/css?family=Kaushan+Script:400,700|Merriweather' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Salsa:400,700|Merriweather' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Special+Elite:400,700|Merriweather' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Calligraffitti:400,700|Merriweather' rel='stylesheet' type='text/css'>
+       <script src="{% static 'modernizr.custom.js' %}"></script>
+	</head>
+	<body id="helpcent">
+	
+		<div id="navbar"><h1 id="logo">Pinions:Help Center</h1></div>
+{% if check > 0 %}
+<div class="navbutton"></div>
+
+	{% for user_obj in user_objs %}
+<div id = "navitems">
+	
+  <img src="{{MEDIA_URL}}{{user_obj.profilepic}}" class="profile-img"/>
+  <a href="/profile/"><p id="name">{{user_obj.username}}</p></a>
+  <hr id="profilehr">
+<p id="desc">{{user_obj.description}}</p>
+<hr id="profilehr">
+ <div id="edit"><a href="/edit_profile/">Edit Profile</a></div>
+
+ <div id="logout"><a href="/logout/">Log Out</a></div>
+</div>
+{% endfor %}
+	<nav>
+
+		<ul class="clearfix">
+
+			<li class="togglebtn"><a id="circle" href="#"><span class="fontawesome-user"></span></a>
+
+				<ul class="login">
+        <dl>  
+
+    <a href="/pinions/"><li id="home_nav">
+      <!-- <div class="home-icon">
+        <div class="roof">
+          <div class="roof-edge"></div>
+        </div>
+        <div class="front"></div>
+      </div-->
+      <img id="home" src="{{MEDIA_URL}}img/home.gif">
+    </li></a>
+	<hr id="partition">
+<a href="/help_pin/" ><li id="aboutus_nav">
+      <!-- <div class="about-icon">
+        <div class="head">
+          <div class="eyes"></div>
+          <div class="beard"></div>
+        </div>
+      </div> -->
+      <img id="aboutus" src="{{MEDIA_URL}}img/aboutus.gif">
+    </li></a>
+	<hr id="partition">
+	<a href="/display_cat/"><li id="cat_nav">
+      <!-- <div class="work-icon">
+        <div class="paper"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+      </div> -->
+         <img id="pin" src="{{MEDIA_URL}}img/pin.gif">
+    </li></a>
+  
+
+	
+  </dl>
+          
+				</ul>
+
+			</li>
+
+		</ul>
+
+	</nav>
+	
+		
+{% else %}
+	<nav>
+
+		<ul class="clearfix">
+
+			<li class="togglebtn"><a id="circle" href="#"><span class="fontawesome-user"></span></a>
+
+				<ul class="login">
+        <dl>  
+
+    <a href="/pinions/"><li id="home_nav">
+      <!-- <div class="home-icon">
+        <div class="roof">
+          <div class="roof-edge"></div>
+        </div>
+        <div class="front"></div>
+      </div> -->
+      <img id="home" src="{{MEDIA_URL}}img/home.gif">
+    </li></a>
+	<hr id="partition">
+<a href="/help_pin/" ><li id="aboutus_nav">
+      <!-- <div class="about-icon">
+        <div class="head">
+          <div class="eyes"></div>
+          <div class="beard"></div>
+        </div>
+      </div> -->
+      <img id="aboutus" src="{{MEDIA_URL}}img/aboutus.gif">
+    </li></a>
+	<hr id="partition">
+	<a href="/display_cat/"> <li id="cat_nav">
+      <!-- <div class="work-icon">
+        <div class="paper"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+      </div> -->
+        <img id="pin" src="{{MEDIA_URL}}img/pin.gif">
+    </li></a>
+   <hr id="partition">
+    
+	<a href="/login/"> <li id="login_nav">
+      <!-- <div class="mail-icon">
+        <div class="mail-base">
+          <div class="mail-top"></div>
+        </div>
+      </div> -->
+      <img id="login" src="{{MEDIA_URL}}img/login.gif">
+    </li></a>
+	<hr id="partition">
+    <a href="/saveval/"> <li id="register_nav">
+      <!-- <div class="mail-icon">
+        <div class="mail-base">
+          <div class="mail-top"></div>
+        </div>
+      </div> -->
+       <img id="register" src="{{MEDIA_URL}}img/register.gif">
+    </li></a>
+  </dl>
+          
+				</ul>
+
+			</li>
+
+		</ul>
+
+	</nav>
+{% endif %}
+<br><br><br>
+		
+			
+			<!-- <div class="nav">
+	   			<ul>
+	   				<li><a href="#pinions">ALL ABOUT PINIONS</a></li><br><hr><br>
+	   				<li><a href="#pins">PINS</a></li><br><hr><br>
+		 			<li><a href="#public_board">PUBLIC BOARD</a></li><br><hr><br>
+		 			<li><a href="#private_board">PRIVATE BOARD</a></li><br><hr><br>
+		 		</ul>
+	   		</div> -->
+   		
+   		<div id="content">
+	   		<div id="pinions">
+	   			<br><h1>ALL ABOUT PINIONS</h1><hr><br>
+	   			<p>PINIONS is a visual bookmarking tool that helps you discover and save creative ideas. It also serves as a platform to share your creativity with other users.</p>
+	   			<img src=""/>
+	   		</div>
+	   		<div id="pins">
+	   			<br><h1>PINS</h1><hr><br>
+	   			<p >Pins are visual bookmarks. Each Pin you see on Pinions links back to the site it came from, so you can learn more about it.</p>
+	   			<p>Pins enable you to save anything of your interest,that you want to come back to later</p>
+	   			<img src=""/>
+	   		</div>
+	   		<div id="public_board">
+	   			<br><h1>PUBLIC PINBOARD</h1><hr><br>
+	   			<p>The public pinboard is a collection of all pins, classified into three major categories, namely, ARTS, FOOD and OTHERS.</p>
+	   			<p>The public pinboard consists of the "PIN IT" button, wherein the user can pin an article of his choice into his/her private pinboard</p>
+	   			<img src=""/>
+			</div>
+			<div id="private_board">
+				<br><h1>PRIVATE PINBOARD</h1><hr><br>
+	   			<p>The private pinboard is an amalagamation of all pins pinned by the user from the public pinboard.They consist of pins of categories-Arts, Food and Others</p>
+	   			<p>A user can upload an article to PINIONS through the Upload button on his/her private pinboard.The user can also edit or delete a pin from the board</p>
+	   			<img src=""/>
+	   		</div>
+	   	</div>
+	   
+   	</body>
+	{% load static %}
+        <script src="{% static 'jquery-1.11.3.min.js' %}"></script>
+        
+        <script src="{% static 'masonry.pkgd.min.js' %}"></script>
+        <script src="{% static 'imagesloaded.js' %}"></script>
+        <script src="{% static 'classie.js' %}"></script>
+        <script src="{% static 'AnimOnScroll.js' %}"></script>
+        <script src=="{% static 'test.js' %}"></script>
+		<script src="{% static 'navi.js' %}"></script>
+		<script src="{% static 'cat.js' %}"></script>
+        <script>
+            new AnimOnScroll( document.getElementById( 'grid' ), {
+                minDuration : 0.4,
+                maxDuration : 0.7,
+                viewportFactor : 0.2
+            } );
+        </script>
+</html>
+
+
+
+
+
+
+
+
+		
+	
+	
+	</body>
+</html>

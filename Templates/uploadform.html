@@ -1,0 +1,52 @@
+ <!DOCTYPE html>
+ 	<head>
+	{% load static %}
+        <meta charset="UTF-8"> 
+		
+       	<link rel="stylesheet" type="text/css" href="{% static 'uploadform.css' %}">
+       	<style type="text/css">
+
+       	</style>
+    </head>
+    	<body>
+    		<div id="wrapper">
+    	
+    				<div class="x">
+    		
+			    
+<button class="btn"><a href="#openModal">Register</a></button>
+				<div id="openModal" class="modalDialog">
+				    <div>	
+				    	<form class="main-form first">
+			  <div class="main-form__title">
+			    <h1>Sign-up</h1>
+			  </div>
+			  <div class="main-form__body">
+			    <input class="main-form__body--input" type="text" placeholder="Username" />
+			    <input class="main-form__body--input" type="text" placeholder="Description" />
+			    <select class="main-form__body--input" type="text" placeholder="Category">
+				  <option class="main-form__body--input" type="text" placeholder="Category" selected="true" style="display:none;">Choose Category</option>
+				  <option class="main-form__body--input" type="text" value="saab">Arts</option>
+				  <option value="mercedes">Food</option>
+				  <option value="audi">Other</option>
+				</select>
+			    <input type="file" name="pic" accept="image/*"><br><br>
+			    <input class="main-form__body--input" type="url" placeholder="Url"/>
+				
+			    </form>
+				   
+				    	
+				    </div>
+				     <a href="#continue" title="Continue" class="continue">Upload</a>	
+				</div>
+			  </div>
+			
+			
+  			</div>
+  		
+			</div>
+			{% load static %}
+    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="register.js"></script>
+   		</body>
+</html>

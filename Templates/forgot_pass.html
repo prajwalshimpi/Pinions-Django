@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+ 	<head>
+	<title>Forgot Password </title>
+        <meta charset="UTF-8"> 
+        {% load static %}
+       	<link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'default.css' %}" />
+        <link rel="stylesheet" type="text/css" href="{% static 'component.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'navwhenloggedinprofile.css' %}">
+        <!--link rel="stylesheet" type="text/css" href="{% static 'cat.css' %}"-->
+		<link href='http://fonts.googleapis.com/css?family=Kaushan+Script:400,700|Merriweather' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Salsa:400,700|Merriweather' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Special+Elite:400,700|Merriweather' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Calligraffitti:400,700|Merriweather' rel='stylesheet' type='text/css'>
+       	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="{% static 'register.js' %}"></script>
+       	
+    </head>
+    	<body style="background-color:#CDE8D5;">
+		<div id="navbar"><br><h1 id="logo">Pinions: Forgot Password?</h1></div>
+		 
+{% if check > 0 %}
+<div class="navbutton"></div>
+
+	{% for user_obj in user_objs %}
+<div id = "navitems">
+	
+  <img src="{{MEDIA_URL}}{{user_obj.profilepic}}" class="profile-img"/>
+  <a href="/profile/"><p id="name">{{user_obj.username}}</p></a>
+  <hr id="profilehr">
+<p id="desc">{{user_obj.description}}</p>
+<hr id="profilehr">
+ <div id="edit"><a href="/edit_profile/">Edit Profile</a></div>
+
+ <div id="logout"><a href="/logout/">Log Out</a></div>
+</div>
+{% endfor %}
+	<nav>
+
+		<ul class="clearfix">
+
+			<li class="togglebtn"><a id="circle" href="#"><span class="fontawesome-user"></span></a>
+
+				<ul class="login">
+        <dl>  
+
+    <a href="/pinions/"><li id="home_nav">
+      <!-- <div class="home-icon">
+        <div class="roof">
+          <div class="roof-edge"></div>
+        </div>
+        <div class="front"></div>
+      </div-->
+      <img id="home" src="{{MEDIA_URL}}img/home.gif">
+    </li></a>
+	<hr id="partition">
+<a href="/help_pin/" ><li id="aboutus_nav">
+      <!-- <div class="about-icon">
+        <div class="head">
+          <div class="eyes"></div>
+          <div class="beard"></div>
+        </div>
+      </div> -->
+      <img id="aboutus" src="{{MEDIA_URL}}img/aboutus.gif">
+    </li></a>
+	<hr id="partition">
+	<a href="/display_cat/"><li id="cat_nav">
+      <!-- <div class="work-icon">
+        <div class="paper"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+      </div> -->
+         <img id="pin" src="{{MEDIA_URL}}img/pin.gif">
+    </li></a>
+  
+
+	
+  </dl>
+          
+				</ul>
+
+			</li>
+
+		</ul>
+
+	</nav>
+	
+		
+{% else %}
+	<nav>
+
+		<ul class="clearfix">
+
+			<li class="togglebtn"><a id="circle" href="#"><span class="fontawesome-user"></span></a>
+
+				<ul class="login">
+        <dl>  
+
+    <a href="/pinions/"><li id="home_nav">
+      <!-- <div class="home-icon">
+        <div class="roof">
+          <div class="roof-edge"></div>
+        </div>
+        <div class="front"></div>
+      </div> -->
+      <img id="home" src="{{MEDIA_URL}}img/home.gif">
+    </li></a>
+	<hr id="partition">
+<a href="/help_pin/" ><li id="aboutus_nav">
+      <!-- <div class="about-icon">
+        <div class="head">
+          <div class="eyes"></div>
+          <div class="beard"></div>
+        </div>
+      </div> -->
+      <img id="aboutus" src="{{MEDIA_URL}}img/aboutus.gif">
+    </li></a>
+	<hr id="partition">
+	<a href="/display_cat/"> <li id="cat_nav">
+      <!-- <div class="work-icon">
+        <div class="paper"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+      </div> -->
+        <img id="pin" src="{{MEDIA_URL}}img/pin.gif">
+    </li></a>
+   <hr id="partition">
+    
+	<a href="/login/"> <li id="login_nav">
+      <!-- <div class="mail-icon">
+        <div class="mail-base">
+          <div class="mail-top"></div>
+        </div>
+      </div> -->
+      <img id="login" src="{{MEDIA_URL}}img/login.gif">
+    </li></a>
+	<hr id="partition">
+    <a href="/saveval/"> <li id="register_nav">
+      <!-- <div class="mail-icon">
+        <div class="mail-base">
+          <div class="mail-top"></div>
+        </div>
+      </div> -->
+       <img id="register" src="{{MEDIA_URL}}img/register.gif">
+    </li></a>
+  </dl>
+          
+				</ul>
+
+			</li>
+
+		</ul>
+
+	</nav>
+{% endif %}
+<br>
+    		<div id="wrapper">
+			
+    	<div class='loadDiv'>
+    			<img id="mike" src='{{MEDIA_URL}}img/minions.gif'/>
+    				<div class="x">
+    		<form class="main-form first" method="post" action="/forgot_pass/" enctype="multipart/form-data">{% csrf_token %} 
+			  <div class="main-form__title">
+			    <h1>Forgot Password
+          <a href="/pinions/"><div style="float:right;width:1.5px;height:1.5px;cursor: pointer;margin:0px 14px auto;color:grey;z-index=-100;">X</div></a></h1>
+        </div>
+      
+			
+
+
+			  <div class="main-form__body">
+			  
+			    <input class="main-form__body--input" type="text" placeholder="Username" name="username" required/><label style="color:red">{{ form.username.errors }}</label><br><hr><br>
+			    <input class="main-form__body--input" type="email" placeholder="Email Address" name="email" required/><label style="color:red">{{ form.email.errors }}</label><br><hr><br>
+			    <button class="btn">Submit</button>
+			    
+			 
+
+			  </div>
+			</form>
+			</div>
+  			</div>
+  		
+			</div><!-- 
+    <div id="openModal" class="modalDialog">
+				    <div>	
+				    	
+				    	<img src="{{MEDIA_URL}}img/welcomewalk.gif">
+				    	<a href="/saveval/" title="Continue" class="continue">Continue</a>
+				    </div>
+				</div> -->
+
+		{% load static %}
+        <script src="{% static 'jquery-1.11.3.min.js' %}"></script>
+        
+        <script src="{% static 'masonry.pkgd.min.js' %}"></script>
+        <script src="{% static 'imagesloaded.js' %}"></script>
+        <script src="{% static 'classie.js' %}"></script>
+        <script src="{% static 'AnimOnScroll.js' %}"></script>
+        <script src=="{% static 'test.js' %}"></script>
+		<script src="{% static 'navi.js' %}"></script>
+		<script src="{% static 'cat.js' %}"></script>
+        <script>
+            new AnimOnScroll( document.getElementById( 'grid' ), {
+                minDuration : 0.4,
+                maxDuration : 0.7,
+                viewportFactor : 0.2
+            } );
+        </script>
+   	</body>
+	
+</html>
+ <!--form action="/forgot_pass/" method="post" class="main-form first">{% csrf_token %}
+        <input class="main-form__body--input" type="text" placeholder="Username" name="username" required/><br><hr><br>
+        <input class="main-form__body--input" type="email" placeholder="Email Address" name="email" required/>
+        <button class="btn">Submit</button>
+    </form-->

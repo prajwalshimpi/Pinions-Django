@@ -1,0 +1,233 @@
+<!DOCTYPE>
+<html>
+
+
+ <head>
+		{% load static %}
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<!--link rel="stylesheet" type="text/css" href="{% static 'navwhenloggedinprofile.css' %}"-->
+        <link rel="stylesheet" type="text/css" href="{% static 'cat.css' %}">
+		<link href='http://fonts.googleapis.com/css?family=Kaushan+Script:400,700|Merriweather' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Salsa:400,700|Merriweather' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Special+Elite:400,700|Merriweather' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Calligraffitti:400,700|Merriweather' rel='stylesheet' type='text/css'>
+       <script src="{% static 'modernizr.custom.js' %}"></script>
+    </head>
+<body>
+    <div id = "navbar"><h1 id="logo">Pinions:Categories</h1>
+  </div>
+<!--div id="navbar"></div>
+		 <div id = "navbar"></div-->
+{% if check > 0 %}
+<div class="navbutton"></div>
+
+	{% for user_obj in user_objs %}
+<div id = "navitems">
+	
+  <img src="{{MEDIA_URL}}{{user_obj.profilepic}}" class="profile-img"/>
+  <a href="/profile/"><p id="name">{{user_obj.username}}</p></a>
+  <hr id="profilehr">
+<p id="desc">{{user_obj.description}}</p>
+<hr id="profilehr">
+ <div id="edit"><a href="/edit_profile/">Edit Profile</a></div>
+
+ <div id="logout"><a href="/logout/">Log Out</a></div>
+</div>
+{% endfor %}
+	<nav>
+
+		<ul class="clearfix">
+
+			<li class="togglebtn"><a id="circle" href="#"><span class="fontawesome-user"></span></a>
+
+				<ul class="login">
+        <dl>  
+
+    <a href="/pinions/"><li id="home_nav">
+      <!-- <div class="home-icon">
+        <div class="roof">
+          <div class="roof-edge"></div>
+        </div>
+        <div class="front"></div>
+      </div-->
+      <img id="home" src="{{MEDIA_URL}}img/home.gif">
+    </li></a>
+	<hr id="partition">
+<a href="/help_pin/" ><li id="aboutus_nav">
+      <!-- <div class="about-icon">
+        <div class="head">
+          <div class="eyes"></div>
+          <div class="beard"></div>
+        </div>
+      </div> -->
+      <img id="aboutus" src="{{MEDIA_URL}}img/aboutus.gif">
+    </li></a>
+	<hr id="partition">
+	<a href="/display_cat/"><li id="cat_nav">
+      <!-- <div class="work-icon">
+        <div class="paper"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+      </div> -->
+         <img id="pin" src="{{MEDIA_URL}}img/pin.gif">
+    </li></a>
+  
+
+	
+  </dl>
+          
+				</ul>
+
+			</li>
+
+		</ul>
+
+	</nav>
+	
+		
+{% else %}
+	<nav>
+
+		<ul class="clearfix">
+
+			<li class="togglebtn"><a id="circle" href="#"><span class="fontawesome-user"></span></a>
+
+				<ul class="login">
+        <dl>  
+
+    <a href="/pinions/"><li id="home_nav">
+      <!-- <div class="home-icon">
+        <div class="roof">
+          <div class="roof-edge"></div>
+        </div>
+        <div class="front"></div>
+      </div> -->
+      <img id="home" src="{{MEDIA_URL}}img/home.gif">
+    </li></a>
+	<hr id="partition">
+<a href="/help_pin/" ><li id="aboutus_nav">
+      <!-- <div class="about-icon">
+        <div class="head">
+          <div class="eyes"></div>
+          <div class="beard"></div>
+        </div>
+      </div> -->
+      <img id="aboutus" src="{{MEDIA_URL}}img/aboutus.gif">
+    </li></a>
+	<hr id="partition">
+	<a href="/display_cat/"> <li id="cat_nav">
+      <!-- <div class="work-icon">
+        <div class="paper"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+        <div class="lines"></div>
+      </div> -->
+        <img id="pin" src="{{MEDIA_URL}}img/pin.gif">
+    </li></a>
+   <hr id="partition">
+    
+	<a href="/login/"> <li id="login_nav">
+      <!-- <div class="mail-icon">
+        <div class="mail-base">
+          <div class="mail-top"></div>
+        </div>
+      </div> -->
+      <img id="login" src="{{MEDIA_URL}}img/login.gif">
+    </li></a>
+	<hr id="partition">
+    <a href="/saveval/"> <li id="register_nav">
+      <!-- <div class="mail-icon">
+        <div class="mail-base">
+          <div class="mail-top"></div>
+        </div>
+      </div> -->
+       <img id="register" src="{{MEDIA_URL}}img/register.gif">
+    </li></a>
+  </dl>
+          
+				</ul>
+
+			</li>
+
+		</ul>
+
+	</nav>
+{% endif %}
+<br>
+        
+       <br><br>
+       
+            <ul class="grid effect-5" id="grid">
+           {% for obj in objs %}
+			
+                <li><div class="grid"><div id="descrip" ><a href="{{obj.link}}"target="_blank"><img src="{{MEDIA_URL}}{{obj.docfile}}">
+				
+                </a>
+               
+				<hr id="newpart"><p>{{obj.description}}</p><hr id="newpart">
+                
+				<div class="chip">
+                     <img id="profilepic" src="{{MEDIA_URL}}{{user_obj.profilepic}}" alt="Contact Person">
+                        {{obj.usernames}}
+
+                          <a id="pintag" href="/pin_it/{{obj.imglink}}"><img src="{{MEDIA_URL}}img/pinit.gif" id="pinit"></a>
+                </div>
+                
+                </div>
+                </li>
+				{% endfor %}
+	
+<!--img src="catpurple.gif" id="title"-->
+<div id="wrapper">
+<div id="container_1">
+<div class="view view-tenth">  
+     <img src="http://deadfix.com/wp-content/uploads/2012/06/Spray-Can-installation-art-by-Julian-Vallee3.jpg"/> 
+
+     <div class="mask1">  
+     <h2>Creativity takes courage</h2>  
+      
+         <a href="/retrieve_art/" class="info">View</a>  
+     </div>  
+
+
+</div> 
+<div> <h1 id="art_text">ARTS<h1/> </div>
+</div>
+<br>
+<div id="container_2">
+<div class="view view-tenth">  
+     <img src="http://blog.chegg.com/wp-content/uploads/2013/02/cooking-college.jpg" />  
+     <div class="mask2">  
+     <h2>There is no sincere love than the love of food.</h2>  
+   
+         <a href="/retrieve_food/" class="info">View</a>  
+     </div>  
+</div>  
+<div> <h1 id="food_text">FOOD<h1/> </div>
+</div>
+
+<div id="container_3">
+<div class="view view-tenth">  
+     <img src="{{MEDIA_URL}}img/craft.jpg" />  
+     <div class="mask3">  
+     <h2>Much More</h2>   
+         <a href="/retrieve_other" class="info">View</a>  
+     </div>  
+     
+</div>  
+<div> <h1 id="other_text">OTHER<h1/> </div>
+</div>  
+</div>  
+{% load static %}
+<!--script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script-->
+<script src="{% static 'jquery-1.11.3.min.js' %}"></script>
+<script src="{% static 'cat.js' %}"></script>
+<script src="{% static 'navi.js' %}"></script>
+
+
+
+</body>
+</html>
